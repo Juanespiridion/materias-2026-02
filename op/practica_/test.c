@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<unistd.h>
 
-int int main(int argc, char const *argv[])
+int main()
 {
 	int u, x, y;
 	int hijos = 3;
@@ -10,7 +10,7 @@ int int main(int argc, char const *argv[])
 		x = fork();
 		if (x==0)
 		{
-			break
+			break;
 		}
 	}
 	return 0;
