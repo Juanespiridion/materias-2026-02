@@ -3,9 +3,9 @@
 
 int main()
 {
-	int u, x, y;
+	int i, u, x, y;
 	int hijos = 3;
-	for (int i = 0; i < hijos; ++i)
+	for (i = 0; i < hijos; ++i)
 	{
 		x = fork();
 		if (x==0)
@@ -13,5 +13,11 @@ int main()
 			break;
 		}
 	}
+	switch(i){
+		case 0: { fork();} 
+		case 1: { fork();}
+		case 3: { printf("Soy el padre\n");}
+	}
+	while(1);
 	return 0;
 }
