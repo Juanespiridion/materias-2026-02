@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Práctica interactiva completa de maquetación web con los 6 elementos utilizando Display Flexbox y CSS Grid.">
+  <meta name="theme-color" content="#0b0f19">
+  <title>Práctica Web: Flexbox y CSS Grid con los 6 Elementos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Encabezado Principal -->
+  <header class="app-header">
+    <div class="brand-wrapper">
+      <span class="badge-tag">Laboratorio Web</span>
+      <div>
+        <h1 class="main-title">Práctica Interactiva: Flexbox y CSS Grid</h1>
+        <p class="subtitle">Demostración en vivo aplicando propiedades de maquetación sobre 6 elementos</p>
+      </div>
+    </div>
+    <div class="header-badges">
+      <span class="mode-pill active" id="currentModePill">Modo Flexbox</span>
+      <span class="mode-pill">6 Elementos Activos</span>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal (Panel Lateral + Escenario) -->
+  <main class="main-container">
+    <!-- Barra Lateral de Controles Interactivos -->
+    <aside class="control-sidebar" aria-label="Panel de Control">
+      <h2 class="sidebar-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        Propiedades
+      </h2>
+
+      <!-- Selector de Modo: Flexbox vs CSS Grid -->
+      <nav class="module-tabs" aria-label="Seleccionar modo de maquetación">
+        <button type="button" class="tab-btn active" id="tabFlexBtn" data-mode="flex">Flexbox</button>
+        <button type="button" class="tab-btn" id="tabGridBtn" data-mode="grid">CSS Grid</button>
+      </nav>
+
+      <!-- CONTROLES FLEXBOX -->
+      <div class="control-section active" id="flexControls">
+        <!-- flex-direction -->
+        <div class="control-group" data-prop="direction">
+          <label class="control-label">flex-direction (Eje)</label>
+          <div class="options-grid">
+            <button type="button" class="option-btn active" data-value="row" id="btnFlexRow">row</button>
+            <button type="button" class="option-btn" data-value="row-reverse" id="btnFlexRowRev">row-reverse</button>
+            <button type="button" class="option-btn" data-value="column" id="btnFlexCol">column</button>
+            <button type="button" class="option-btn" data-value="column-reverse" id="btnFlexColRev">col-reverse</button>
+          </div>
+        </div>
+
+        <!-- flex-wrap -->
+        <div class="control-group" data-prop="wrap">
+          <label class="control-label">flex-wrap (Multilínea)</label>
+          <div class="options-grid">
+            <button type="button" class="option-btn active" data-value="wrap" id="btnWrap">wrap</button>
+            <button type="button" class="option-btn" data-value="nowrap" id="btnNoWrap">nowrap</button>
+            <button type="button" class="option-btn" data-value="wrap-reverse" id="btnWrapRev">wrap-reverse</button>
+          </div>
+        </div>
+
+        <!-- justify-content -->
+        <div class="control-group" data-prop="justifyContent">
+          <label class="control-label">justify-content (Eje Principal)</label>
+          <div class="options-grid">
+            <button type="button" class="option-btn active" data-value="center" id="btnJcCenter">center</button>
+            <button type="button" class="option-btn" data-value="flex-start" id="btnJcStart">flex-start</button>
+            <button type="button" class="option-btn" data-value="flex-end" id="btnJcEnd">flex-end</button>
+            <button type="button" class="option-btn" data-value="space-between" id="btnJcBetween">between</button>
+            <button type="button" class="option-btn" data-value="space-around" id="btnJcAround">around</button>
+            <button type="button" class="option-btn" data-value="space-evenly" id="btnJcEvenly">evenly</button>
+          </div>
+        </div>
+
+        <!-- align-items -->
+        <div class="control-group" data-prop="alignItems">
+          <label class="control-label">align-items (Eje Secundario)</label>
+          <div class="options-grid">
+            <button type="button" class="option-btn active" data-value="center" id="btnAiCenter">center</button>
+            <button type="button" class="option-btn" data-value="flex-start" id="btnAiStart">flex-start</button>
+            <button type="button" class="option-btn" data-value="flex-end" id="btnAiEnd">flex-end</button>
+            <button type="button" class="option-btn" data-value="stretch" id="btnAiStretch">stretch</button>
+          </div>
+        </div>
+
+        <!-- Opciones de los ítems individuales -->
+        <div class="toggle-wrapper">
+          <div class="toggle-item">
+            <span>flex-grow en ítems pares</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggleGrow">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="toggle-item">
+            <span>order invertido (6 a 1)</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="toggleOrder">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTROLES CSS GRID -->
+      <div class="control-section" id="gridControls">
+        <!-- grid-template-columns -->
+        <div class="control-group" data-prop="columns">
+          <label class="control-label">grid-template-columns</label>
+          <div class="options-grid">
+            <button type="button" class="option-btn active" data-value="repeat(3, 1fr)" id="btnGrid3Col">repeat(3, 1fr)</button>
+            <button type="button" class="option-btn" data-value="repeat(2, 1fr)" id="btnGrid2Col">repeat(2, 1fr)</button>
+            <button type="button" class="option-btn" data-value="repeat(auto-fit, minmax(160px, 1fr))" id="btnGridAuto">auto-fit</button>
+            <button type="button" class="option-btn" data-value="200px 1fr 1fr" id="btnGridCustom">200px 1fr 1fr</button>
+          </div>
+        </div>
+
+        <!-- grid-template-areas -->
+        <div class="control-group" data-prop="gridTemplateAreas">
+          <label class="control-label">Diseño por Áreas (Slide 44)</label>
+          <div class="options-grid">
+            <button type="button" class="option-btn" data-value="true" id="btnGridAreas">Activar Áreas (Header, Menu, Main, Aside, Extra, Footer)</button>
+          </div>
+        </div>
+
+        <!-- justify-items -->
+        <div class="control-group" data-prop="justifyItems">
+          <label class="control-label">justify-items</label>
+          <div class="options-grid">
+            <button type="button" class="option-btn active" data-value="stretch" id="btnGridJiStretch">stretch</button>
+            <button type="button" class="option-btn" data-value="center" id="btnGridJiCenter">center</button>
+            <button type="button" class="option-btn" data-value="start" id="btnGridJiStart">start</button>
+            <button type="button" class="option-btn" data-value="end" id="btnGridJiEnd">end</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTROL DE GAP (Común para ambos) -->
+      <div class="control-group" style="margin-top: 18px;">
+        <label class="control-label" for="gapSlider">Espaciado / Gutter (gap)</label>
+        <div class="range-wrapper">
+          <input type="range" min="0" max="40" value="16" id="gapSlider" class="range-input">
+          <span class="range-val" id="gapVal">16px</span>
+        </div>
+      </div>
+
+      <!-- Toggle para Guías de Ejes -->
+      <div class="toggle-wrapper" style="margin-top: 14px; padding-top: 14px;">
+        <div class="toggle-item">
+          <span>Mostrar Ejes y Guías</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="toggleAxes" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Área de Visualización y Explicaciones -->
+    <section class="stage-area" aria-label="Visualizador">
+      <!-- Escenario con los 6 Elementos -->
+      <article class="stage-card">
+        <div class="stage-header">
+          <div class="stage-title-wrap">
+            <div class="stage-indicator"></div>
+            <div>
+              <h2 class="stage-title">Contenedor Principal (Parent)</h2>
+              <p class="stage-caption">Los 6 elementos hijos responden en tiempo real al modelo flexible y de cuadrícula</p>
+            </div>
+          </div>
+
+          <div class="axis-helper" id="axisHelper">
+            <div class="axis-item">
+              <span class="axis-dot-main"></span>
+              <span id="mainAxisLabel">Eje Principal: Horizontal (X)</span>
+            </div>
+            <div class="axis-item">
+              <span class="axis-dot-cross"></span>
+              <span id="crossAxisLabel">Eje Cruzado: Vertical (Y)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Canvas que contiene físicamente los 6 Elementos -->
+        <div class="demo-canvas-wrapper show-axis-lines" id="canvasWrapper">
+          <span class="canvas-overlay-label">Área del Contenedor Flexible / Grilla</span>
+          <div id="demoContainer">
+            <!-- ELEMENTO 1 -->
+            <div class="demo-item element-1" id="elem1">
+              <div class="item-badge-row">
+                <span class="item-num">01</span>
+                <span class="item-role-tag">Ítem 1</span>
+              </div>
+              <h3 class="item-name">Elemento Uno</h3>
+              <p class="item-desc">Primer elemento hijo flexible dentro del contenedor.</p>
+              <div class="item-property-info">
+                <span>order: 0</span>
+                <span>grow: 0</span>
+              </div>
+            </div>
+
+            <!-- ELEMENTO 2 -->
+            <div class="demo-item element-2" id="elem2">
+              <div class="item-badge-row">
+                <span class="item-num">02</span>
+                <span class="item-role-tag">Ítem 2</span>
+              </div>
+              <h3 class="item-name">Elemento Dos</h3>
+              <p class="item-desc">Segundo hijo adaptable según la distribución y eje.</p>
+              <div class="item-property-info">
+                <span>order: 0</span>
+                <span>grow: 0</span>
+              </div>
+            </div>
+
+            <!-- ELEMENTO 3 -->
+            <div class="demo-item element-3" id="elem3">
+              <div class="item-badge-row">
+                <span class="item-num">03</span>
+                <span class="item-role-tag">Ítem 3</span>
+              </div>
+              <h3 class="item-name">Elemento Tres</h3>
+              <p class="item-desc">Tercer componente con contenido ajustable.</p>
+              <div class="item-property-info">
+                <span>order: 0</span>
+                <span>grow: 0</span>
+              </div>
+            </div>
+
+            <!-- ELEMENTO 4 -->
+            <div class="demo-item element-4" id="elem4">
+              <div class="item-badge-row">
+                <span class="item-num">04</span>
+                <span class="item-role-tag">Ítem 4</span>
+              </div>
+              <h3 class="item-name">Elemento Cuatro</h3>
+              <p class="item-desc">Cuarto elemento que interactúa con el espaciado (gap).</p>
+              <div class="item-property-info">
+                <span>order: 0</span>
+                <span>grow: 0</span>
+              </div>
+            </div>
+
+            <!-- ELEMENTO 5 -->
+            <div class="demo-item element-5" id="elem5">
+              <div class="item-badge-row">
+                <span class="item-num">05</span>
+                <span class="item-role-tag">Ítem 5</span>
+              </div>
+              <h3 class="item-name">Elemento Cinco</h3>
+              <p class="item-desc">Quinto elemento adaptable a wrap y dimensiones fraccionarias.</p>
+              <div class="item-property-info">
+                <span>order: 0</span>
+                <span>grow: 0</span>
+              </div>
+            </div>
+
+            <!-- ELEMENTO 6 -->
+            <div class="demo-item element-6" id="elem6">
+              <div class="item-badge-row">
+                <span class="item-num">06</span>
+                <span class="item-role-tag">Ítem 6</span>
+              </div>
+              <h3 class="item-name">Elemento Seis</h3>
+              <p class="item-desc">Sexto elemento que completa la cuadrícula 2x3 o 3x2.</p>
+              <div class="item-property-info">
+                <span>order: 0</span>
+                <span>grow: 0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Panel Inferior: Código CSS en vivo y Fundamento Teórico -->
+      <div class="bottom-info-grid">
+        <!-- Código CSS Generado -->
+        <article class="code-card">
+          <div class="card-title-row">
+            <h2 class="card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              Código CSS Generado en Tiempo Real
+            </h2>
+            <button type="button" class="copy-btn" id="copyBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copiar CSS
+            </button>
+          </div>
+          <pre class="code-display" id="codeDisplay"></pre>
+        </article>
+
+        <!-- Explicación Teórica de las diapositivas -->
+        <article class="theory-card">
+          <div class="card-title-row">
+            <h2 class="card-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              Concepto Clave (Diapositivas)
+            </h2>
+            <span class="theory-badge" id="theoryBadge">Módulo: Flexbox</span>
+          </div>
+          <div class="theory-content">
+            <p id="theoryText"></p>
+            <ul id="theoryList" style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px;"></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Notificación Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite">¡Código CSS copiado con éxito!</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

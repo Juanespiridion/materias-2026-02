@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    section {
+        display: grid;
+        grid-template-areas:
+        "head head"
+        "menu main"
+        "foot foot";
+        }
+    #general{
+        padding: 10px;
+    }
+    .head { grid-area: head; background: blue; color: white; }
+    .menu { grid-area: menu; background: red; color: white; }
+    .main { grid-area: main; background: green; color: white; }
+    .foot { grid-area: foot; background: orange; color: white; }
+
+</style>
+<body>
+    <section>
+        <div id="general" class="head">Encabezado</div>
+        <div id="general" class="menu">Menú</div>
+        <div id="general" class="main">Menu principal</div>
+        <div id="general" class="foot">Pie de página</div>
+    </section>
+</body>
+</html>
