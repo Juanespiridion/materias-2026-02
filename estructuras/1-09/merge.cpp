@@ -15,7 +15,7 @@ void merge(int* datos, int iniIz, int finIzq, int iniDer, finDer){
 		return;
 	}
 
-	int *datoTmp = new int[]
+	int *datoTmp = new int[] 
 
 	while(true){
 		if (datos[iniIz])
@@ -39,4 +39,4 @@ void mergeSort(int* datos, int ini, int fin){
 int main(int argc, char const *argv[])
 {
 	return 0;
-}
+}			
