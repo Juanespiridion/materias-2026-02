@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con un número</title>
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px;
+            max-width: 400px;
+        }
+
+        h1,
+        fieldset,
+        .botones {
+            grid-column: 1 / -1;
+        }
+
+        .botones {
+            display: flex;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Operaciones con un número</h1>
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" type="text">
+        <label for="numero">Número n:</label>
+        <input id="numero" type="number" min="0" step="1">
+        <div class="botones">
+            <button id="factorial" type="button">Factorial</button>
+            <button id="cuadrado" type="button">Cuadrado</button>
+            <button id="suma" type="button">Suma</button>
+        </div>
+        <fieldset>
+            <legend>Resultado</legend>
+            <div id="resultado" aria-live="polite"></div>
+        </fieldset>
+    </main>
+    <script src="app.js" defer></script>
+</body>
+</html>
