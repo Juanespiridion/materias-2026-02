@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Práctica de modales</h1>
+        <p>Un mensaje dentro de la página.</p>
+        <button id="abrir" type="button">
+            Ver saludo
+        </button>
+        <button id="abrir-despedida" type="button">
+            Ver despedida
+        </button>
+        <button id="curso">
+            Ver curso
+        </button>
+    </main>
+    <dialog id="modal"
+        aria-labelledby="titulo-modal">
+        <div id="cabecera-modal">            
+            <img src="https://uacm.edu.mx/images/Logo-25Aniv.png" alt="Icono de información" width="100px" height="100px">
+            <h2 id="titulo-modal">Información</h2>
+        </div>
+        <p id="mensaje-modal"></p>
+        <button id="cerrar" type="button" autofocus>
+        Cerrar
+        </button>
+    </dialog>
+
+
+</body>
+</html>
