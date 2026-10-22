@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <canvas id= "primerCanvas" width="800" height="200"
+        style="border:3px solid #0000ff;">
+        Tu navegador no soporta el elemento canvas
+    </canvas>
+
+    <script>
+        var c = document.getElementById("primerCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "#FFFF00";
+        ctx.fillRect(0,0,150,75);
+    </script>
+
+</body>
+</html>
